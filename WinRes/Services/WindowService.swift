@@ -14,10 +14,12 @@ private class MenuBarItem: MenuItem {
 
 private class MenuItem {
     let id: String?
+    let englishTitle: String
     let localizedTitle: String
     
     init(id: String? = nil, title: String) {
         self.id = id
+        self.englishTitle = title
         self.localizedTitle = LocalizationService.localizedString(forKey: title)
     }
 }
@@ -41,7 +43,7 @@ class WindowService {
 
         do {
             let title = try AccessibilityService.getTitle(uiElement: uiElement)
-            if title == menuItem.localizedTitle {
+            if title == menuItem.localizedTitle || title == menuItem.englishTitle {
                 return true
             }
         } catch {

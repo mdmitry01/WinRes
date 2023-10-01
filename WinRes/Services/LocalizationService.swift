@@ -25,8 +25,17 @@ class LocalizationService {
         return [:]
     }
     
+    static func getCurrentLanguageCode() -> String? {
+        if NSLocale.preferredLanguages.isEmpty {
+            return nil
+        }
+        // get the first 2 characters from a string like en-UA
+        return String(Locale.preferredLanguages[0].prefix(2))
+    }
+
     static func localizedString(forKey: String) -> String {
-        let localizations = self.getLocalizationDictionary()[NSLocale.current.languageCode ?? "en"]
+        let languageCode = self.getCurrentLanguageCode() ?? "en"
+        let localizations = self.getLocalizationDictionary()[languageCode]
         guard let localizations = localizations as? NSDictionary else {
             return forKey
         }
