@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66025ED32AC9AC5C00A121FE /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 66025ED22AC9AC5C00A121FE /* Settings.png */; };
+		660F89772AC96FF5000067B9 /* WinResApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89762AC96FF5000067B9 /* WinResApp.swift */; };
+		660F897B2AC96FF6000067B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F897A2AC96FF6000067B9 /* Assets.xcassets */; };
+		660F897E2AC96FF6000067B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F897D2AC96FF6000067B9 /* Preview Assets.xcassets */; };
+		660F89872AC97241000067B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89862AC97241000067B9 /* AppDelegate.swift */; };
+		660F898C2AC972BA000067B9 /* ApplicationSwitcherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F898B2AC972BA000067B9 /* ApplicationSwitcherModel.swift */; };
+		660F898E2AC972DA000067B9 /* AccessibilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F898D2AC972DA000067B9 /* AccessibilityService.swift */; };
+		660F89902AC972F0000067B9 /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F898F2AC972F0000067B9 /* ApplicationService.swift */; };
+		660F89922AC972FD000067B9 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89912AC972FD000067B9 /* LocalizationService.swift */; };
+		660F89942AC9730E000067B9 /* WindowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89932AC9730E000067B9 /* WindowService.swift */; };
+		660F89962AC97325000067B9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89952AC97325000067B9 /* Utils.swift */; };
+		660F89982AC97338000067B9 /* ApplicationSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89972AC97338000067B9 /* ApplicationSwitcherView.swift */; };
+		660F899A2AC97346000067B9 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89992AC97346000067B9 /* SettingsScreen.swift */; };
+		660F899D2AC975E0000067B9 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 660F899C2AC975E0000067B9 /* KeyboardShortcuts */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		66025ECD2AC989D400A121FE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		66025ED22AC9AC5C00A121FE /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		660F89732AC96FF5000067B9 /* WinRes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinRes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		660F89762AC96FF5000067B9 /* WinResApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinResApp.swift; sourceTree = "<group>"; };
+		660F897A2AC96FF6000067B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		660F897D2AC96FF6000067B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		660F897F2AC96FF6000067B9 /* WinRes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WinRes.entitlements; sourceTree = "<group>"; };
+		660F89862AC97241000067B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		660F898B2AC972BA000067B9 /* ApplicationSwitcherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSwitcherModel.swift; sourceTree = "<group>"; };
+		660F898D2AC972DA000067B9 /* AccessibilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityService.swift; sourceTree = "<group>"; };
+		660F898F2AC972F0000067B9 /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
+		660F89912AC972FD000067B9 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
+		660F89932AC9730E000067B9 /* WindowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowService.swift; sourceTree = "<group>"; };
+		660F89952AC97325000067B9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		660F89972AC97338000067B9 /* ApplicationSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSwitcherView.swift; sourceTree = "<group>"; };
+		660F89992AC97346000067B9 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		660F89702AC96FF5000067B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660F899D2AC975E0000067B9 /* KeyboardShortcuts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66025ECE2AC9AB3700A121FE /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				66025ECF2AC9AB3F00A121FE /* Images */,
+			);
+			path = Docs;
+			sourceTree = "<group>";
+		};
+		66025ECF2AC9AB3F00A121FE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				66025ED22AC9AC5C00A121FE /* Settings.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		660F896A2AC96FF5000067B9 = {
+			isa = PBXGroup;
+			children = (
+				66025ECD2AC989D400A121FE /* README.md */,
+				660F89752AC96FF5000067B9 /* WinRes */,
+				660F89742AC96FF5000067B9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		660F89742AC96FF5000067B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				660F89732AC96FF5000067B9 /* WinRes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		660F89752AC96FF5000067B9 /* WinRes */ = {
+			isa = PBXGroup;
+			children = (
+				66025ECE2AC9AB3700A121FE /* Docs */,
+				660F898A2AC9729A000067B9 /* Views */,
+				660F89892AC97286000067B9 /* Utils */,
+				660F89882AC97274000067B9 /* Models */,
+				660F89852AC971F6000067B9 /* Services */,
+				660F89762AC96FF5000067B9 /* WinResApp.swift */,
+				660F897A2AC96FF6000067B9 /* Assets.xcassets */,
+				660F897F2AC96FF6000067B9 /* WinRes.entitlements */,
+				660F897C2AC96FF6000067B9 /* Preview Content */,
+				660F89862AC97241000067B9 /* AppDelegate.swift */,
+			);
+			path = WinRes;
+			sourceTree = "<group>";
+		};
+		660F897C2AC96FF6000067B9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				660F897D2AC96FF6000067B9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		660F89852AC971F6000067B9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				660F898D2AC972DA000067B9 /* AccessibilityService.swift */,
+				660F898F2AC972F0000067B9 /* ApplicationService.swift */,
+				660F89912AC972FD000067B9 /* LocalizationService.swift */,
+				660F89932AC9730E000067B9 /* WindowService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		660F89882AC97274000067B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				660F898B2AC972BA000067B9 /* ApplicationSwitcherModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		660F89892AC97286000067B9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				660F89952AC97325000067B9 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		660F898A2AC9729A000067B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				660F89972AC97338000067B9 /* ApplicationSwitcherView.swift */,
+				660F89992AC97346000067B9 /* SettingsScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		660F89722AC96FF5000067B9 /* WinRes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660F89822AC96FF6000067B9 /* Build configuration list for PBXNativeTarget "WinRes" */;
+			buildPhases = (
+				660F896F2AC96FF5000067B9 /* Sources */,
+				660F89702AC96FF5000067B9 /* Frameworks */,
+				660F89712AC96FF5000067B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WinRes;
+			packageProductDependencies = (
+				660F899C2AC975E0000067B9 /* KeyboardShortcuts */,
+			);
+			productName = WinRes;
+			productReference = 660F89732AC96FF5000067B9 /* WinRes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		660F896B2AC96FF5000067B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					660F89722AC96FF5000067B9 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 660F896E2AC96FF5000067B9 /* Build configuration list for PBXProject "WinRes" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 660F896A2AC96FF5000067B9;
+			packageReferences = (
+				660F899B2AC975E0000067B9 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
+			productRefGroup = 660F89742AC96FF5000067B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				660F89722AC96FF5000067B9 /* WinRes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		660F89712AC96FF5000067B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66025ED32AC9AC5C00A121FE /* Settings.png in Resources */,
+				660F897E2AC96FF6000067B9 /* Preview Assets.xcassets in Resources */,
+				660F897B2AC96FF6000067B9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		660F896F2AC96FF5000067B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660F89922AC972FD000067B9 /* LocalizationService.swift in Sources */,
+				660F89872AC97241000067B9 /* AppDelegate.swift in Sources */,
+				660F89982AC97338000067B9 /* ApplicationSwitcherView.swift in Sources */,
+				660F89962AC97325000067B9 /* Utils.swift in Sources */,
+				660F89772AC96FF5000067B9 /* WinResApp.swift in Sources */,
+				660F898E2AC972DA000067B9 /* AccessibilityService.swift in Sources */,
+				660F899A2AC97346000067B9 /* SettingsScreen.swift in Sources */,
+				660F89902AC972F0000067B9 /* ApplicationService.swift in Sources */,
+				660F898C2AC972BA000067B9 /* ApplicationSwitcherModel.swift in Sources */,
+				660F89942AC9730E000067B9 /* WindowService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		660F89802AC96FF6000067B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		660F89812AC96FF6000067B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		660F89832AC96FF6000067B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WinRes/WinRes.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WinRes/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.merkulov.WinRes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		660F89842AC96FF6000067B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WinRes/WinRes.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WinRes/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.merkulov.WinRes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		660F896E2AC96FF5000067B9 /* Build configuration list for PBXProject "WinRes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660F89802AC96FF6000067B9 /* Debug */,
+				660F89812AC96FF6000067B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660F89822AC96FF6000067B9 /* Build configuration list for PBXNativeTarget "WinRes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660F89832AC96FF6000067B9 /* Debug */,
+				660F89842AC96FF6000067B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		660F899B2AC975E0000067B9 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = exactVersion;
+				version = 1.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		660F899C2AC975E0000067B9 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 660F899B2AC975E0000067B9 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 660F896B2AC96FF5000067B9 /* Project object */;
+}
