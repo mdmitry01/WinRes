@@ -80,6 +80,6 @@ class ApplicationService {
             return
         }
 
-        try await self.openApplication(applicationBundleId: applicationBundleId)
+        runningApplication.activate(options: [.activateIgnoringOtherApps])
     }
 }
