@@ -5,6 +5,7 @@ enum ApplicationServiceError: Error {
     case appNotFound(appBundleId: String)
     case cannotGetProcessIdOfFrontmostApp
     case cannotOpenAppSettings(_: String)
+    case appBundleUrlIsMissing
 }
 
 class ApplicationService {
@@ -72,20 +73,18 @@ class ApplicationService {
             try await Task.sleep(nanoseconds: UInt64(20 * Double(NSEC_PER_MSEC)))
         }
 
-        if WindowService.hasMainWindow(processId: processId) == false {
-            try WindowService.openNewWindow(processId: processId)
-            self.activateApplication(application: runningApplication)
-            return
-        }
-
         if
             let frontmostApplication = NSWorkspace.shared.frontmostApplication,
-            frontmostApplication.bundleIdentifier == applicationBundleId
+            frontmostApplication.bundleIdentifier == applicationBundleId &&
+                WindowService.hasWindowsInCurrentWorkspace(processId: processId)
         {
             try WindowService.switchToNextWindow(processId: processId)
             return
         }
 
-        self.activateApplication(application: runningApplication)
+        guard let bundleURL = runningApplication.bundleURL else {
+            throw ApplicationServiceError.appBundleUrlIsMissing
+        }
+        try DockService.openApplication(bundleURL: bundleURL)
     }
 }

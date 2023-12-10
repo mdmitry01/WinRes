@@ -15,7 +15,7 @@ class AccessibilityService {
         }
         return value
     }
-    
+
     static func getMenuBar(processIdentifier: pid_t) throws -> AXUIElement {
         let appElement = AXUIElementCreateApplication(processIdentifier)
         return try self.copyAttributeValue(
@@ -44,6 +44,14 @@ class AccessibilityService {
         let title = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXTitleAttribute as CFString)
         if let title = title as? String {
             return title
+        }
+        throw AccessibilityError.invalidAttributeValue
+    }
+
+    static func getURL(uiElement: AXUIElement) throws -> URL {
+        let url = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXURLAttribute as CFString)
+        if let url = url as? URL {
+            return url
         }
         throw AccessibilityError.invalidAttributeValue
     }

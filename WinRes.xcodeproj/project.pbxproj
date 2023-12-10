@@ -22,6 +22,7 @@
 		660F899A2AC97346000067B9 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89992AC97346000067B9 /* SettingsScreen.swift */; };
 		660F899D2AC975E0000067B9 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 660F899C2AC975E0000067B9 /* KeyboardShortcuts */; };
 		665169D82B263B4000BA89F2 /* MenuBarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665169D72B263B4000BA89F2 /* MenuBarService.swift */; };
+		665169DA2B2662EC00BA89F2 /* DockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665169D92B2662EC00BA89F2 /* DockService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		660F89972AC97338000067B9 /* ApplicationSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSwitcherView.swift; sourceTree = "<group>"; };
 		660F89992AC97346000067B9 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		665169D72B263B4000BA89F2 /* MenuBarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarService.swift; sourceTree = "<group>"; };
+		665169D92B2662EC00BA89F2 /* DockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				660F89912AC972FD000067B9 /* LocalizationService.swift */,
 				660F89932AC9730E000067B9 /* WindowService.swift */,
 				665169D72B263B4000BA89F2 /* MenuBarService.swift */,
+				665169D92B2662EC00BA89F2 /* DockService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				660F89962AC97325000067B9 /* Utils.swift in Sources */,
 				660F89772AC96FF5000067B9 /* WinResApp.swift in Sources */,
 				660F898E2AC972DA000067B9 /* AccessibilityService.swift in Sources */,
+				665169DA2B2662EC00BA89F2 /* DockService.swift in Sources */,
 				660F899A2AC97346000067B9 /* SettingsScreen.swift in Sources */,
 				660F89902AC972F0000067B9 /* ApplicationService.swift in Sources */,
 				660F898C2AC972BA000067B9 /* ApplicationSwitcherModel.swift in Sources */,

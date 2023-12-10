@@ -31,17 +31,20 @@ class WindowService {
         try Utils.pressKey(keyCode: UInt16(kVK_ANSI_Grave), flags: [.maskCommand], processId: processId)
     }
 
-    static func hasMainWindow(processId: pid_t) -> Bool {
-        let appElement = AXUIElementCreateApplication(processId)
-        do {
-            let window = try AccessibilityService.copyAttributeValue(
-                uiElement: appElement,
-                attribute: kAXMainWindowAttribute as CFString
-            )
-            return window != nil
-        } catch {
-            print("Failed to get the main window of the app, \(error)")
+    static func hasWindowsInCurrentWorkspace(processId: pid_t) -> Bool {
+        // https://developer.apple.com/documentation/coregraphics/cgwindowlistoption/1454105-optiononscreenonly
+        let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID)
+        guard let windows = windows as? Array<Dictionary<String, Any>> else {
             return false
         }
+        for window in windows {
+            guard let windowProcessId = window[kCGWindowOwnerPID as String] as? pid_t else {
+                continue
+            }
+            if windowProcessId == processId {
+                return true
+            }
+        }
+        return false
     }
 }
