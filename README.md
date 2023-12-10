@@ -17,9 +17,9 @@ Switch to a specific app using a keyboard shortcut. For example, assign `⌥1` t
 The switching logic is the following:
 
 1. If the app is not running, launch the app
-2. If the app is running, but there are no visible windows of the app in the current space, open a new window of the app
-3. If there are visible app windows in the current space, then switch to a window of the app
-4. If an app window is in the focus, switch to the next app window
+2. If the app is running, but there are no windows of the app, open a new app window
+3. If there are windows of the app, then switch to the app
+4. If a window of the app is in the focus, switch to the next app window
 
 ## Screenshots
 

@@ -7,16 +7,13 @@ enum AccessibilityError: Error {
 }
 
 class AccessibilityService {
-    static func copyAttributeValue(uiElement: AXUIElement, attribute: CFString) throws -> AnyObject {
+    static func copyAttributeValue(uiElement: AXUIElement, attribute: CFString) throws -> AnyObject? {
         var value: AnyObject?
         let error = AXUIElementCopyAttributeValue(uiElement, attribute, &value)
         if error != AXError.success {
             throw AccessibilityError.cannotCopyAttributeValue(cause: error)
         }
-        if let value = value {
-            return value
-        }
-        throw AccessibilityError.cannotCopyAttributeValue()
+        return value
     }
     
     static func getMenuBar(processIdentifier: pid_t) throws -> AXUIElement {

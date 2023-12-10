@@ -47,6 +47,10 @@ class ApplicationService {
         }
     }
     
+    private static func activateApplication(application: NSRunningApplication) {
+        application.activate(options: [.activateIgnoringOtherApps, .activateAllWindows])
+    }
+
     static func switchToApplication(applicationBundleId: String, opensNewWindow: Bool = false) async throws {
         let runningApplications = NSRunningApplication.runningApplications(withBundleIdentifier: applicationBundleId)
         if runningApplications.isEmpty {
@@ -58,6 +62,7 @@ class ApplicationService {
 
         if opensNewWindow {
             try WindowService.openNewWindow(processId: processId)
+            self.activateApplication(application: runningApplication)
             return
         }
         
@@ -66,9 +71,10 @@ class ApplicationService {
             // wait 20ms for the windows to appear
             try await Task.sleep(nanoseconds: UInt64(20 * Double(NSEC_PER_MSEC)))
         }
-        
-        if WindowService.hasWindowsOnScreenOnly(processId: processId) == false {
+
+        if WindowService.hasMainWindow(processId: processId) == false {
             try WindowService.openNewWindow(processId: processId)
+            self.activateApplication(application: runningApplication)
             return
         }
 
@@ -80,6 +86,6 @@ class ApplicationService {
             return
         }
 
-        runningApplication.activate(options: [.activateIgnoringOtherApps])
+        self.activateApplication(application: runningApplication)
     }
 }
