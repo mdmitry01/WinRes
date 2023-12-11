@@ -21,7 +21,9 @@ Assign keyboard shortcuts to:
 3. Move the active window to the left side of the screen
 4. Move the active window to the right side of the screen
 
-**Warning**: the window resizing feature is experimental, which means it may not work in some cases. It also means that the feature may be removed in a future release.
+#### Warning
+
+The window moving/resizing feature is experimental, which means it may not work in some cases. It also means that the feature may be removed in a future release.
 
 ## Screenshots
 
@@ -29,7 +31,17 @@ Assign keyboard shortcuts to:
 
 ## Installation
 
-Go to [the releases page](https://github.com/mdmitry01/WinRes/releases) and download the latest app version.
+1. Go to [the releases page](https://github.com/mdmitry01/WinRes/releases) and download the latest app version
+2. Double-click on the downloaded `.dmg` file
+3. Drag and drop the WinRes application to your Applications folder
+4. When you try to launch the WinRes application, you'll get the following warning: "Apple cannot check it for malicious software".
+    It's because the WinRes app is not signed and notarized by Apple. As far as I understood, it costs $100 per year.
+    See more info about it at the Apple website: https://support.apple.com/en-us/HT202491 .
+    To make the app launch, we are going to bypass this warning:
+    1. Go to the Applications folder
+    2. Control-click the WinRes app
+    3. Choose Open from the menu
+    4. Click Open in the dialog that appears
 
 ## How to use
 
