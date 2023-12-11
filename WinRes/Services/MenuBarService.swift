@@ -29,6 +29,14 @@ enum MenuBarServiceError: Error {
 }
 
 class MenuBarService {
+    private static func getMenuBar(processIdentifier: pid_t) throws -> AXUIElement {
+        let appElement = AXUIElementCreateApplication(processIdentifier)
+        return try AccessibilityService.copyAttributeValue(
+            uiElement: appElement,
+            attribute: kAXMenuBarAttribute as CFString
+        ) as! AXUIElement
+    }
+    
     private static func isMenuItem(uiElement: AXUIElement, menuItem: MenuItem) -> Bool {
         do {
             if let menuItemId = menuItem.id {
@@ -64,7 +72,7 @@ class MenuBarService {
     
     // based on https://github.com/steve228uk/QBlocker/blob/ebaa8a9c2ed5242fbcd63514193fe66851468a1c/QBlocker/KeyListener.swift#L214
     static func selectWindowMenuItem(windowMenuItem: WindowMenuItem, processId: pid_t) throws -> Void {
-        let menuBar = try AccessibilityService.getMenuBar(processIdentifier: processId)
+        let menuBar = try self.getMenuBar(processIdentifier: processId)
         let menuBarItems = try AccessibilityService.getChildren(uiElement: menuBar)
 
         var windowMenuItems: NSArray = []

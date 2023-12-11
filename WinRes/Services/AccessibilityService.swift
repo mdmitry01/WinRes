@@ -15,14 +15,6 @@ class AccessibilityService {
         }
         return value
     }
-
-    static func getMenuBar(processIdentifier: pid_t) throws -> AXUIElement {
-        let appElement = AXUIElementCreateApplication(processIdentifier)
-        return try self.copyAttributeValue(
-            uiElement: appElement,
-            attribute: kAXMenuBarAttribute as CFString
-        ) as! AXUIElement
-    }
     
     static func getChildren(uiElement: AXUIElement) throws -> NSArray {
         let children = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXChildrenAttribute as CFString)
@@ -31,7 +23,7 @@ class AccessibilityService {
         }
         return []
     }
-    
+
     static func getIdentifier(uiElement: AXUIElement) throws -> String {
         let id = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXIdentifierAttribute as CFString)
         if let id = id as? String {
