@@ -2,16 +2,7 @@
 
 A macOS application which serves two purposes:
 
-### 1. Adds keyboard shortcuts to move and resize windows
-
-Assign keyboard shortcuts to:
-
-1. Zoom the active window
-2. Minimize the active window
-3. Move the active window to the left side of the screen
-4. Move the active window to the right side of the screen
-
-### 2. Works as an app switcher
+### 1. Works as an app switcher
 
 Switch to a specific app using a keyboard shortcut. For example, assign `⌥1` to switch to your browser and `⌥2` to switch to your terminal app.
 The switching logic is the following:
@@ -20,6 +11,17 @@ The switching logic is the following:
 2. If the app is running, but there are no windows of the app, open a new app window
 3. If there are windows of the app, then switch to the app
 4. If a window of the app is in the focus, switch to the next app window
+
+### 2. Adds keyboard shortcuts to move and resize windows
+
+Assign keyboard shortcuts to:
+
+1. Zoom the active window
+2. Minimize the active window
+3. Move the active window to the left side of the screen
+4. Move the active window to the right side of the screen
+
+**Warning**: the window resizing feature is experimental, which means it may not work in some cases. It also means that the feature may be removed in a future release.
 
 ## Screenshots
 
@@ -48,11 +50,12 @@ then click on the "Shortcut" field to assign a shortcut. If you want to always o
 To build the WinRes app:
 
 1. Open this project in Xcode
-2. In the menu bar, go to `Product` > `Archive`
-3. In the `Archives` window that opens, select the version you want and click `Distribute App`
-4. Select `Copy App` as the distribution method
-5. Choose a name and location, then click `Export`
-6. Use the Disk Utility to create a `dmg` file from the `app` file you created in the previous step, see how to do so [here](https://kb.parallels.com/en/123895)
+2. Increase the version number if needed. See how to do it here: https://stackoverflow.com/a/47945146
+3. In the menu bar, go to `Product` > `Archive`
+4. In the `Archives` window that opens, select the version you want and click `Distribute App`
+5. Select `Copy App` as the distribution method
+6. Choose a name and location, then click `Export`
+7. Use the Disk Utility to create a `dmg` file from the `app` file you created in the previous step, see how to do so [here](https://kb.parallels.com/en/123895)
 
 ## Why
 
