@@ -66,12 +66,6 @@ class ApplicationService {
             self.activateApplication(application: runningApplication)
             return
         }
-        
-        if runningApplication.isHidden {
-            runningApplication.unhide()
-            // wait 20ms for the windows to appear
-            try await Task.sleep(nanoseconds: UInt64(20 * Double(NSEC_PER_MSEC)))
-        }
 
         if
             let frontmostApplication = NSWorkspace.shared.frontmostApplication,
