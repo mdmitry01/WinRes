@@ -34,14 +34,18 @@ class WindowService {
     static func hasWindowsInCurrentWorkspace(processId: pid_t) -> Bool {
         // https://developer.apple.com/documentation/coregraphics/cgwindowlistoption/1454105-optiononscreenonly
         let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID)
-        guard let windows = windows as? Array<Dictionary<String, Any>> else {
+        guard let windows = windows as? Array<Dictionary<CFString, Any>> else {
             return false
         }
         for window in windows {
-            guard let windowProcessId = window[kCGWindowOwnerPID as String] as? pid_t else {
+            guard
+                let windowProcessId = window[kCGWindowOwnerPID] as? pid_t,
+                let windowLayer = window[kCGWindowLayer] as? Int
+            else {
                 continue
             }
-            if windowProcessId == processId {
+            // More info about the windowLayer: https://stackoverflow.com/a/5286921
+            if windowProcessId == processId && windowLayer == 0 {
                 return true
             }
         }
