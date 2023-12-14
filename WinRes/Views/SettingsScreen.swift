@@ -3,15 +3,22 @@ import KeyboardShortcuts
 
 struct SettingsScreen: View {
     let switchWindowsShortcutModels: [ApplicationSwitcherModel]
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
     
     var body: some View {
         ScrollView {
             VStack() {
                 Section {
+                    Text("WinRes v\(self.appVersion)")
+                        .font(.system(.title2))
+                        .fontWeight(.bold)
+                }
+                Divider()
+                Section {
                     Text("Window shortcuts")
                         .font(.system(.title3))
                         .fontWeight(.bold)
-                }
+                }.padding(.top, 7)
                 Form {
                     KeyboardShortcuts.Recorder(for: .zoomActiveWindow) {
                         Text("Zoom active window")
