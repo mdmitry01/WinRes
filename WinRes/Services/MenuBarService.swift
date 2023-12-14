@@ -33,7 +33,7 @@ class MenuBarService {
         let appElement = AXUIElementCreateApplication(processIdentifier)
         return try AccessibilityService.copyAttributeValue(
             uiElement: appElement,
-            attribute: kAXMenuBarAttribute as CFString
+            attribute: kAXMenuBarAttribute
         ) as! AXUIElement
     }
     
@@ -61,13 +61,12 @@ class MenuBarService {
         return false
     }
     
-    private static func getMenuItems(menuBarItem: AXUIElement) throws -> NSArray {
+    private static func getMenuItems(menuBarItem: AXUIElement) throws -> [AXUIElement] {
         let menus = try AccessibilityService.getChildren(uiElement: menuBarItem)
         guard menus.count > 0 else {
             return []
         }
-        let menu = menus[0] as! AXUIElement
-        return try AccessibilityService.getChildren(uiElement: menu)
+        return try AccessibilityService.getChildren(uiElement: menus[0])
     }
     
     // based on https://github.com/steve228uk/QBlocker/blob/ebaa8a9c2ed5242fbcd63514193fe66851468a1c/QBlocker/KeyListener.swift#L214
@@ -75,21 +74,21 @@ class MenuBarService {
         let menuBar = try self.getMenuBar(processIdentifier: processId)
         let menuBarItems = try AccessibilityService.getChildren(uiElement: menuBar)
 
-        var windowMenuItems: NSArray = []
+        var windowMenuItems: [AXUIElement] = []
         for menuBarItem in menuBarItems {
-            let isTargetMenuItem = self.isMenuItem(uiElement: menuBarItem as! AXUIElement, menuItem: MenuBarItem.window)
+            let isTargetMenuItem = self.isMenuItem(uiElement: menuBarItem, menuItem: MenuBarItem.window)
             if isTargetMenuItem {
-                windowMenuItems = try self.getMenuItems(menuBarItem: menuBarItem as! AXUIElement)
+                windowMenuItems = try self.getMenuItems(menuBarItem: menuBarItem)
                 break
             }
         }
 
         for menuItem in windowMenuItems {
-            let isTargetMenuItem = self.isMenuItem(uiElement: menuItem as! AXUIElement, menuItem: windowMenuItem)
+            let isTargetMenuItem = self.isMenuItem(uiElement: menuItem, menuItem: windowMenuItem)
             if isTargetMenuItem {
                 try AccessibilityService.performAction(
-                    uiElement: menuItem as! AXUIElement,
-                    action: kAXPressAction as CFString
+                    uiElement: menuItem,
+                    action: kAXPressAction
                 )
                 return
             }

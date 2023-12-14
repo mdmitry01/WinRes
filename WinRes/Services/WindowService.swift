@@ -27,28 +27,31 @@ class WindowService {
         try Utils.pressKey(keyCode: UInt16(kVK_ANSI_N), flags: [.maskCommand], processId: processId)
     }
     
-    static func switchToNextWindow(processId: pid_t) throws {
-        try Utils.pressKey(keyCode: UInt16(kVK_ANSI_Grave), flags: [.maskCommand], processId: processId)
+    private static func getWindowsInCurrentWorkspace(processId: pid_t) throws -> [AXUIElement] {
+        let appElement = AXUIElementCreateApplication(processId)
+        return try AccessibilityService.getWindows(appElement: appElement)
     }
-
-    static func hasWindowsInCurrentWorkspace(processId: pid_t) -> Bool {
-        // https://developer.apple.com/documentation/coregraphics/cgwindowlistoption/1454105-optiononscreenonly
-        let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID)
-        guard let windows = windows as? Array<Dictionary<CFString, Any>> else {
+    
+    /// - returns: true if switching to the next window was successful, otherwise false
+    static func switchToNextWindowInCurrentWorkspace(processId: pid_t) -> Bool {
+        do {
+            let windows = try self.getWindowsInCurrentWorkspace(processId: processId)
+            if windows.count <= 1 {
+                return false
+            }
+            try AccessibilityService.performAction(
+                uiElement: windows.last!,
+                action: kAXRaiseAction
+            )
+            return true
+        } catch {
+            print(error)
             return false
         }
-        for window in windows {
-            guard
-                let windowProcessId = window[kCGWindowOwnerPID] as? pid_t,
-                let windowLayer = window[kCGWindowLayer] as? Int
-            else {
-                continue
-            }
-            // More info about the windowLayer: https://stackoverflow.com/a/5286921
-            if windowProcessId == processId && windowLayer == 0 {
-                return true
-            }
-        }
-        return false
+    }
+
+    static func hasWindowsInCurrentWorkspace(processId: pid_t) throws -> Bool {
+        let windows = try self.getWindowsInCurrentWorkspace(processId: processId)
+        return !windows.isEmpty
     }
 }

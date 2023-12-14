@@ -7,25 +7,25 @@ enum AccessibilityError: Error {
 }
 
 class AccessibilityService {
-    static func copyAttributeValue(uiElement: AXUIElement, attribute: CFString) throws -> AnyObject? {
+    static func copyAttributeValue(uiElement: AXUIElement, attribute: String) throws -> AnyObject? {
         var value: AnyObject?
-        let error = AXUIElementCopyAttributeValue(uiElement, attribute, &value)
+        let error = AXUIElementCopyAttributeValue(uiElement, attribute as CFString, &value)
         if error != AXError.success {
             throw AccessibilityError.cannotCopyAttributeValue(cause: error)
         }
         return value
     }
     
-    static func getChildren(uiElement: AXUIElement) throws -> NSArray {
-        let children = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXChildrenAttribute as CFString)
-        if let children = children as? NSArray {
+    static func getChildren(uiElement: AXUIElement) throws -> [AXUIElement] {
+        let children = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXChildrenAttribute)
+        if let children = children as? [AXUIElement] {
             return children
         }
         return []
     }
 
     static func getIdentifier(uiElement: AXUIElement) throws -> String {
-        let id = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXIdentifierAttribute as CFString)
+        let id = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXIdentifierAttribute)
         if let id = id as? String {
             return id
         }
@@ -33,7 +33,7 @@ class AccessibilityService {
     }
     
     static func getTitle(uiElement: AXUIElement) throws -> String {
-        let title = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXTitleAttribute as CFString)
+        let title = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXTitleAttribute)
         if let title = title as? String {
             return title
         }
@@ -41,15 +41,26 @@ class AccessibilityService {
     }
 
     static func getURL(uiElement: AXUIElement) throws -> URL {
-        let url = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXURLAttribute as CFString)
+        let url = try self.copyAttributeValue(uiElement: uiElement, attribute: kAXURLAttribute)
         if let url = url as? URL {
             return url
         }
         throw AccessibilityError.invalidAttributeValue
     }
     
-    static func performAction(uiElement: AXUIElement, action: CFString) throws -> Void {
-        let error = AXUIElementPerformAction(uiElement, action)
+    static func getWindows(appElement: AXUIElement) throws -> [AXUIElement] {
+        let windows = try AccessibilityService.copyAttributeValue(
+            uiElement: appElement,
+            attribute: kAXWindowsAttribute
+        )
+        if let windows = windows as? [AXUIElement] {
+            return windows
+        }
+        throw AccessibilityError.invalidAttributeValue
+    }
+    
+    static func performAction(uiElement: AXUIElement, action: String) throws -> Void {
+        let error = AXUIElementPerformAction(uiElement, action as CFString)
         if error != AXError.success {
             throw AccessibilityError.cannotPerformAction(cause: error)
         }

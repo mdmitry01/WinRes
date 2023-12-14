@@ -15,12 +15,12 @@ class DockService {
         return runningApplications[0].processIdentifier
     }
     
-    private static func findDockItemWithBundleURL(dockItems: NSArray, bundleURL: URL) throws -> AXUIElement {
+    private static func findDockItemWithBundleURL(dockItems: [AXUIElement], bundleURL: URL) throws -> AXUIElement {
         for dockItem in dockItems {
             do {
-                let url = try AccessibilityService.getURL(uiElement: dockItem as! AXUIElement)
+                let url = try AccessibilityService.getURL(uiElement: dockItem)
                 if url == bundleURL {
-                    return dockItem as! AXUIElement
+                    return dockItem
                 }
             } catch {
                 // error is ignored
@@ -40,7 +40,7 @@ class DockService {
         let dockItem = try self.findDockItemWithBundleURL(dockItems: dockItems, bundleURL: bundleURL)
         try AccessibilityService.performAction(
             uiElement: dockItem,
-            action: kAXPressAction as CFString
+            action: kAXPressAction
         )
     }
 }

@@ -69,11 +69,13 @@ class ApplicationService {
 
         if
             let frontmostApplication = NSWorkspace.shared.frontmostApplication,
-            frontmostApplication.bundleIdentifier == applicationBundleId &&
-                WindowService.hasWindowsInCurrentWorkspace(processId: processId)
+            frontmostApplication.bundleIdentifier == applicationBundleId
         {
-            try WindowService.switchToNextWindow(processId: processId)
-            return
+            let hasWindows = try WindowService.hasWindowsInCurrentWorkspace(processId: processId)
+            if hasWindows {
+                _ = WindowService.switchToNextWindowInCurrentWorkspace(processId: processId)
+                return
+            }
         }
 
         guard let bundleURL = runningApplication.bundleURL else {
