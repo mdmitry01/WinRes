@@ -36,7 +36,7 @@ class WindowService {
     static func switchToNextWindowInCurrentWorkspace(processId: pid_t) -> Bool {
         do {
             let windows = try self.getWindowsInCurrentWorkspace(processId: processId)
-            if windows.count <= 1 {
+            if windows.count == 0 {
                 return false
             }
             try AccessibilityService.performAction(
