@@ -52,7 +52,16 @@ class ApplicationService {
         application.activate(options: [.activateIgnoringOtherApps, .activateAllWindows])
     }
 
-    static func switchToApplication(applicationBundleId: String, opensNewWindow: Bool = false) async throws {
+    private static func openNewWindow(application: NSRunningApplication) throws {
+        try WindowService.openNewWindow(processId: application.processIdentifier)
+        self.activateApplication(application: application)
+    }
+
+    static func switchToApplication(
+        applicationBundleId: String,
+        opensNewWindow: Bool,
+        switchesToWorkspace: Bool
+    ) async throws {
         let runningApplications = NSRunningApplication.runningApplications(withBundleIdentifier: applicationBundleId)
         if runningApplications.isEmpty {
             try await self.openApplication(applicationBundleId: applicationBundleId)
@@ -62,8 +71,7 @@ class ApplicationService {
         let processId = runningApplication.processIdentifier
 
         if opensNewWindow {
-            try WindowService.openNewWindow(processId: processId)
-            self.activateApplication(application: runningApplication)
+            try self.openNewWindow(application: runningApplication)
             return
         }
 
@@ -74,6 +82,14 @@ class ApplicationService {
             let hasWindows = try WindowService.hasWindowsInCurrentWorkspace(processId: processId)
             if hasWindows {
                 _ = WindowService.switchToNextWindowInCurrentWorkspace(processId: processId)
+                return
+            }
+        }
+
+        if !switchesToWorkspace {
+            let hasWindows = try WindowService.hasWindowsInCurrentWorkspace(processId: processId)
+            if !hasWindows {
+                try self.openNewWindow(application: runningApplication)
                 return
             }
         }

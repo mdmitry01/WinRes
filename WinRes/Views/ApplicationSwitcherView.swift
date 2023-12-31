@@ -9,6 +9,7 @@ struct ApplicationSwitcherView: View {
             TextField("App bundle ID", text: $model.appBundleId)
             KeyboardShortcuts.Recorder("Shortcut", name: model.shortcutName)
             Toggle("Open a new window", isOn: $model.opensNewWindow)
+            Toggle("Switch to a Space with open windows of the application", isOn: $model.switchesToWorkspace)
         }
     }
 }

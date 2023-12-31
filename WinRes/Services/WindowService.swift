@@ -22,7 +22,7 @@ class WindowService {
     static func zoomRight(processId: pid_t) throws {
         try MenuBarService.selectWindowMenuItem(windowMenuItem: .zoomRight, processId: processId)
     }
-    
+
     static func openNewWindow(processId: pid_t) throws {
         try Utils.pressKey(keyCode: UInt16(kVK_ANSI_N), flags: [.maskCommand], processId: processId)
     }
