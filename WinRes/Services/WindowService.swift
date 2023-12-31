@@ -29,7 +29,10 @@ class WindowService {
     
     private static func getWindowsInCurrentWorkspace(processId: pid_t) throws -> [AXUIElement] {
         let appElement = AXUIElementCreateApplication(processId)
-        return try AccessibilityService.getWindows(appElement: appElement)
+        let windows = try AccessibilityService.getWindows(appElement: appElement)
+        return try windows.filter { window in
+            return try !AccessibilityService.isMinimized(window: window)
+        }
     }
     
     /// - returns: true if switching to the next window was successful, otherwise false

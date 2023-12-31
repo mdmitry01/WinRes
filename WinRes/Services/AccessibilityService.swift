@@ -58,6 +58,14 @@ class AccessibilityService {
         }
         throw AccessibilityError.invalidAttributeValue
     }
+
+    static func isMinimized(window: AXUIElement) throws -> Bool {
+        let isMinimized = try AccessibilityService.copyAttributeValue(uiElement: window, attribute: kAXMinimizedAttribute)
+        if let isMinimized = isMinimized as? Bool {
+            return isMinimized
+        }
+        throw AccessibilityError.invalidAttributeValue
+    }
     
     static func performAction(uiElement: AXUIElement, action: String) throws -> Void {
         let error = AXUIElementPerformAction(uiElement, action as CFString)
