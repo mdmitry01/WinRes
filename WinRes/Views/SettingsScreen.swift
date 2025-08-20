@@ -3,6 +3,7 @@ import KeyboardShortcuts
 
 struct SettingsScreen: View {
     let switchWindowsShortcutModels: [ApplicationSwitcherModel]
+    let ignoreRightModifierKeysModel: IgnoreRightModifierKeysModel
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
     
     var body: some View {
@@ -13,6 +14,8 @@ struct SettingsScreen: View {
                         .font(.system(.title2))
                         .fontWeight(.bold)
                 }
+                Divider()
+                IgnoreRightModifierKeysView(model: self.ignoreRightModifierKeysModel)
                 Divider()
                 Section {
                     Text("Window shortcuts")

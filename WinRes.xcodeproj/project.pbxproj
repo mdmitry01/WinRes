@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27CE95182E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95172E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift */; };
+		27CE951A2E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95192E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift */; };
 		660F89772AC96FF5000067B9 /* WinResApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89762AC96FF5000067B9 /* WinResApp.swift */; };
 		660F897B2AC96FF6000067B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F897A2AC96FF6000067B9 /* Assets.xcassets */; };
 		660F897E2AC96FF6000067B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F897D2AC96FF6000067B9 /* Preview Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27CE95172E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreRightModifierKeysView.swift; sourceTree = "<group>"; };
+		27CE95192E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreRightModifierKeysModel.swift; sourceTree = "<group>"; };
 		66025ECD2AC989D400A121FE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		660F89732AC96FF5000067B9 /* WinRes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinRes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		660F89762AC96FF5000067B9 /* WinResApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinResApp.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				660F898B2AC972BA000067B9 /* ApplicationSwitcherModel.swift */,
+				27CE95192E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				660F89972AC97338000067B9 /* ApplicationSwitcherView.swift */,
+				27CE95172E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift */,
 				660F89992AC97346000067B9 /* SettingsScreen.swift */,
 			);
 			path = Views;
@@ -235,10 +241,12 @@
 				660F89872AC97241000067B9 /* AppDelegate.swift in Sources */,
 				660F89982AC97338000067B9 /* ApplicationSwitcherView.swift in Sources */,
 				660F89962AC97325000067B9 /* Utils.swift in Sources */,
+				27CE951A2E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift in Sources */,
 				660F89772AC96FF5000067B9 /* WinResApp.swift in Sources */,
 				660F898E2AC972DA000067B9 /* AccessibilityService.swift in Sources */,
 				665169DA2B2662EC00BA89F2 /* DockService.swift in Sources */,
 				660F899A2AC97346000067B9 /* SettingsScreen.swift in Sources */,
+				27CE95182E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift in Sources */,
 				660F89902AC972F0000067B9 /* ApplicationService.swift in Sources */,
 				660F898C2AC972BA000067B9 /* ApplicationSwitcherModel.swift in Sources */,
 				660F89942AC9730E000067B9 /* WindowService.swift in Sources */,
