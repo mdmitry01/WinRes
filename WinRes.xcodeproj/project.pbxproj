@@ -462,7 +462,7 @@
 			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
 			requirement = {
 				kind = exactVersion;
-				version = 1.15.0;
+				version = 2.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
