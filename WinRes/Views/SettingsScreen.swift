@@ -2,7 +2,8 @@ import SwiftUI
 import KeyboardShortcuts
 
 struct SettingsScreen: View {
-    let switchWindowsShortcutModels: [ApplicationSwitcherModel]
+    let applicationSwitcherModels: [ApplicationSwitcherModel]
+    let mapKeyboardShortcutsModels: [MapKeyboardShortcutsModel]
     let ignoreRightModifierKeysModel: IgnoreRightModifierKeysModel
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
     
@@ -47,12 +48,22 @@ struct SettingsScreen: View {
                     }
                 }
                 Section {
+                    Text("Map keyboard shortcuts")
+                        .font(.system(.title3))
+                        .fontWeight(.bold)
+                }.padding(.top, 10.0)
+                Divider()
+                ForEach(mapKeyboardShortcutsModels, id: \.id) { model in
+                    MapKeyboardShortcutsView(model: model)
+                    Divider()
+                }
+                Section {
                     Text("Switch to an app using keyboard")
                         .font(.system(.title3))
                         .fontWeight(.bold)
                 }.padding(.top, 10.0)
                 Divider()
-                ForEach(switchWindowsShortcutModels, id: \.id) { model in
+                ForEach(applicationSwitcherModels, id: \.id) { model in
                     ApplicationSwitcherView(model: model)
                     Divider()
                 }

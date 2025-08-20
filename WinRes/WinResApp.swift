@@ -19,21 +19,28 @@ enum RightModifierKey: UInt16 {
 @main
 struct WinResApp: App {
     private static let NUMBER_OF_APPLICATION_SWITCHERS = 30
+    private static let NUMBER_OF_KEYBOARD_SHORTCUT_MAPPERS = 15
     
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     private var applicationSwitcherModels: [ApplicationSwitcherModel] = []
+    private var mapKeyboardShortcutsModels: [MapKeyboardShortcutsModel] = []
     private let ignoreRightModifierKeysModel = IgnoreRightModifierKeysModel()
     
     var body: some Scene {
         Settings {
-            SettingsScreen(switchWindowsShortcutModels: self.applicationSwitcherModels, ignoreRightModifierKeysModel: self.ignoreRightModifierKeysModel)
-                .frame(width: 400, height: 750)
+            SettingsScreen(
+                applicationSwitcherModels: self.applicationSwitcherModels,
+                mapKeyboardShortcutsModels: self.mapKeyboardShortcutsModels,
+                ignoreRightModifierKeysModel: self.ignoreRightModifierKeysModel
+            ).frame(width: 400, height: 750)
         }
     }
     
     init() {
         self.applicationSwitcherModels = self.createApplicationSwitcherModels()
+        self.mapKeyboardShortcutsModels = self.createMapKeyboardShortcutsModels()
         self.addApplicationSwitcherShortcuts()
+        self.addShortcutMapperShortcuts();
         self.addWindowShortcuts()
         self.ignoreRightModifierKeysIfNeeded()
     }
@@ -116,6 +123,20 @@ struct WinResApp: App {
         }
     }
     
+    private func addShortcutMapperShortcuts() -> Void {
+        for model in self.mapKeyboardShortcutsModels {
+            KeyboardShortcuts.onKeyDown(for: model.shortcutName) {
+                do {
+                    try KeyboardShortcutsMappingService.pressKey(model: model)
+                } catch {
+                    let message = "Cannot simulate a shortcut, \(error)"
+                    Utils.showErrorAlert(message)
+                    print(message)
+                }
+            }
+        }
+    }
+    
     private func createApplicationSwitcherModels() -> [ApplicationSwitcherModel] {
         var applicationSwitcherModels: [ApplicationSwitcherModel] = []
         for i in 1...Self.NUMBER_OF_APPLICATION_SWITCHERS {
@@ -123,5 +144,14 @@ struct WinResApp: App {
             applicationSwitcherModels.append(applicationSwitcherModel)
         }
         return applicationSwitcherModels
+    }
+    
+    private func createMapKeyboardShortcutsModels() -> [MapKeyboardShortcutsModel] {
+        var models: [MapKeyboardShortcutsModel] = []
+        for i in 1...Self.NUMBER_OF_KEYBOARD_SHORTCUT_MAPPERS {
+            let model = MapKeyboardShortcutsModel(id: "WinRes_MapKeyboardShortcutsModel_\(i)_")
+            models.append(model)
+        }
+        return models
     }
 }
