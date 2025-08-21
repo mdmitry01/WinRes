@@ -27,7 +27,7 @@ The window moving/resizing feature is experimental, which means it may not work 
 
 ## Screenshots
 
-<img src="./WinRes/Docs/Images/Settings.png" width="500">
+<img src="./WinRes/Docs/Images/Settings.png">
 
 ## Installation
 
