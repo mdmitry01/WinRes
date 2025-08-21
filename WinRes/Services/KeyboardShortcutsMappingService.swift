@@ -41,7 +41,7 @@ class KeyboardShortcutsMappingService {
         switch (character.lowercased()) {
         case " ":
             return kVK_Space;
-        case "\n":
+        case "↵":
             return kVK_Return;
             
         case "0":
