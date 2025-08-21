@@ -35,7 +35,7 @@ class KeyboardShortcutsMappingService {
             flags: self.getEventFlags(model: model),
         )
     }
-    
+
     // based on https://github.com/JetBrains/jcef/blob/8c4b81a83c72d6257061509c00f3f0484388f731/remote/browser/KeyEventProcessing.cpp#L242
     private static func getKeyCodeFromCharacter(_ character: Character) -> Int? {
         switch (character.lowercased()) {

@@ -8,14 +8,6 @@ extension KeyboardShortcuts.Name {
     static let moveActiveWindowToRightSide = Self("moveActiveWindowToRightSide")
 }
 
-// Keycode map for right modifiers
-enum RightModifierKey: UInt16 {
-    case rightShift = 60
-    case rightControl = 62
-    case rightOption = 61
-    case rightCommand = 54
-}
-
 @main
 struct WinResApp: App {
     private static let NUMBER_OF_APPLICATION_SWITCHERS = 30
@@ -24,14 +16,14 @@ struct WinResApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     private var applicationSwitcherModels: [ApplicationSwitcherModel] = []
     private var mapKeyboardShortcutsModels: [MapKeyboardShortcutsModel] = []
-    private let ignoreRightModifierKeysModel = IgnoreRightModifierKeysModel()
+    private let ignoreModifierKeysModel = IgnoreModifierKeysModel()
     
     var body: some Scene {
         Settings {
             SettingsScreen(
                 applicationSwitcherModels: self.applicationSwitcherModels,
                 mapKeyboardShortcutsModels: self.mapKeyboardShortcutsModels,
-                ignoreRightModifierKeysModel: self.ignoreRightModifierKeysModel
+                ignoreModifierKeysModel: self.ignoreModifierKeysModel
             ).frame(width: 400, height: 750)
         }
     }
@@ -42,29 +34,7 @@ struct WinResApp: App {
         self.addApplicationSwitcherShortcuts()
         self.addShortcutMapperShortcuts();
         self.addWindowShortcuts()
-        self.ignoreRightModifierKeysIfNeeded()
-    }
-    
-    private func ignoreRightModifierKeysIfNeeded() {
-        // inspired by https://github.com/huytd/OctoCmd/blob/0339242971c892986c466d987c85e9537050a250/OctoCmd/Apps/AppDelegate.swift#L56-L72
-        NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged, handler: { event in
-            if (!self.ignoreRightModifierKeysModel.ignoresRightModifierKeys) {
-                return
-            }
-            if event.modifierFlags.intersection([.shift, .control, .option, .command]).isEmpty {
-                // key up
-                DispatchQueue.main.async {
-                    KeyboardShortcuts.isEnabled = true
-                }
-                return;
-            }
-            // key down
-            if RightModifierKey(rawValue: event.keyCode) != nil {
-                DispatchQueue.main.async {
-                    KeyboardShortcuts.isEnabled = false
-                }
-            }
-        })
+        ModifierKeysService.ignoreModifierKeysIfEnabled(model: self.ignoreModifierKeysModel)
     }
     
     private func addWindowShortcuts() {

@@ -10,8 +10,9 @@
 		272A06612E5622E400AC3632 /* KeyboardShortcutsMappingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A06602E5622E400AC3632 /* KeyboardShortcutsMappingService.swift */; };
 		272A06632E5623D500AC3632 /* MapKeyboardShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A06622E5623D500AC3632 /* MapKeyboardShortcutsView.swift */; };
 		272A06652E5625F400AC3632 /* MapKeyboardShortcutsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A06642E5625F400AC3632 /* MapKeyboardShortcutsModel.swift */; };
-		27CE95182E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95172E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift */; };
-		27CE951A2E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95192E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift */; };
+		27AAAADC2E5727C000C2F339 /* ModifierKeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AAAADB2E5727C000C2F339 /* ModifierKeysService.swift */; };
+		27CE95182E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95172E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift */; };
+		27CE951A2E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95192E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift */; };
 		660F89772AC96FF5000067B9 /* WinResApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F89762AC96FF5000067B9 /* WinResApp.swift */; };
 		660F897B2AC96FF6000067B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F897A2AC96FF6000067B9 /* Assets.xcassets */; };
 		660F897E2AC96FF6000067B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660F897D2AC96FF6000067B9 /* Preview Assets.xcassets */; };
@@ -34,8 +35,9 @@
 		272A06602E5622E400AC3632 /* KeyboardShortcutsMappingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsMappingService.swift; sourceTree = "<group>"; };
 		272A06622E5623D500AC3632 /* MapKeyboardShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyboardShortcutsView.swift; sourceTree = "<group>"; };
 		272A06642E5625F400AC3632 /* MapKeyboardShortcutsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyboardShortcutsModel.swift; sourceTree = "<group>"; };
-		27CE95172E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreRightModifierKeysView.swift; sourceTree = "<group>"; };
-		27CE95192E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreRightModifierKeysModel.swift; sourceTree = "<group>"; };
+		27AAAADB2E5727C000C2F339 /* ModifierKeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierKeysService.swift; sourceTree = "<group>"; };
+		27CE95172E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreModifierKeysView.swift; sourceTree = "<group>"; };
+		27CE95192E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreModifierKeysModel.swift; sourceTree = "<group>"; };
 		66025ECD2AC989D400A121FE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		660F89732AC96FF5000067B9 /* WinRes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinRes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		660F89762AC96FF5000067B9 /* WinResApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinResApp.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				660F898D2AC972DA000067B9 /* AccessibilityService.swift */,
+				27AAAADB2E5727C000C2F339 /* ModifierKeysService.swift */,
 				272A06602E5622E400AC3632 /* KeyboardShortcutsMappingService.swift */,
 				660F898F2AC972F0000067B9 /* ApplicationService.swift */,
 				660F89912AC972FD000067B9 /* LocalizationService.swift */,
@@ -137,7 +140,7 @@
 			children = (
 				660F898B2AC972BA000067B9 /* ApplicationSwitcherModel.swift */,
 				272A06642E5625F400AC3632 /* MapKeyboardShortcutsModel.swift */,
-				27CE95192E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift */,
+				27CE95192E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				660F89972AC97338000067B9 /* ApplicationSwitcherView.swift */,
-				27CE95172E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift */,
+				27CE95172E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift */,
 				272A06622E5623D500AC3632 /* MapKeyboardShortcutsView.swift */,
 				660F89992AC97346000067B9 /* SettingsScreen.swift */,
 			);
@@ -250,14 +253,15 @@
 				660F89872AC97241000067B9 /* AppDelegate.swift in Sources */,
 				660F89982AC97338000067B9 /* ApplicationSwitcherView.swift in Sources */,
 				660F89962AC97325000067B9 /* Utils.swift in Sources */,
-				27CE951A2E55EBBB007ED3D1 /* IgnoreRightModifierKeysModel.swift in Sources */,
+				27AAAADC2E5727C000C2F339 /* ModifierKeysService.swift in Sources */,
+				27CE951A2E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift in Sources */,
 				660F89772AC96FF5000067B9 /* WinResApp.swift in Sources */,
 				660F898E2AC972DA000067B9 /* AccessibilityService.swift in Sources */,
 				272A06612E5622E400AC3632 /* KeyboardShortcutsMappingService.swift in Sources */,
 				272A06632E5623D500AC3632 /* MapKeyboardShortcutsView.swift in Sources */,
 				665169DA2B2662EC00BA89F2 /* DockService.swift in Sources */,
 				660F899A2AC97346000067B9 /* SettingsScreen.swift in Sources */,
-				27CE95182E55EB7A007ED3D1 /* IgnoreRightModifierKeysView.swift in Sources */,
+				27CE95182E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift in Sources */,
 				660F89902AC972F0000067B9 /* ApplicationService.swift in Sources */,
 				272A06652E5625F400AC3632 /* MapKeyboardShortcutsModel.swift in Sources */,
 				660F898C2AC972BA000067B9 /* ApplicationSwitcherModel.swift in Sources */,

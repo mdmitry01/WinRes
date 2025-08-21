@@ -4,7 +4,7 @@ import KeyboardShortcuts
 struct SettingsScreen: View {
     let applicationSwitcherModels: [ApplicationSwitcherModel]
     let mapKeyboardShortcutsModels: [MapKeyboardShortcutsModel]
-    let ignoreRightModifierKeysModel: IgnoreRightModifierKeysModel
+    let ignoreModifierKeysModel: IgnoreModifierKeysModel
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
     
     var body: some View {
@@ -16,7 +16,7 @@ struct SettingsScreen: View {
                         .fontWeight(.bold)
                 }
                 Divider()
-                IgnoreRightModifierKeysView(model: self.ignoreRightModifierKeysModel)
+                IgnoreModifierKeysView(model: self.ignoreModifierKeysModel)
                 Divider()
                 Section {
                     Text("Window shortcuts")
