@@ -7,7 +7,7 @@ struct MapKeyboardShortcutsView: View {
     var body: some View {
         Form {
             KeyboardShortcuts.Recorder("Shortcut", name: model.shortcutName)
-            TextField("Key", text: $model.keyCharacter)
+            TextField("Key", text: $model.keyCharacter).textFieldStyle(RoundedBorderTextFieldStyle())
             HStack(spacing: 16) {
                 Toggle("⌃", isOn: $model.includesControlModifier)
                 Toggle("⌥", isOn: $model.includesOptionModifier)

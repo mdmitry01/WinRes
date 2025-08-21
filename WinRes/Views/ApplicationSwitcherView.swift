@@ -5,11 +5,21 @@ struct ApplicationSwitcherView: View {
     @ObservedObject var model: ApplicationSwitcherModel
     
     var body: some View {
-        Form {
-            TextField("App bundle ID", text: $model.appBundleId)
-            KeyboardShortcuts.Recorder("Shortcut", name: model.shortcutName)
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text("App bundle ID")
+                TextField("App bundle ID", text: $model.appBundleId)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+
+            HStack {
+                KeyboardShortcuts.Recorder("Shortcut", name: model.shortcutName)
+            }
+
             Toggle("Open a new window", isOn: $model.opensNewWindow)
             Toggle("Switch to a Space with open windows of the application", isOn: $model.switchesToWorkspace)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
+
 }

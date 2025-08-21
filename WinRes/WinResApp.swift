@@ -11,7 +11,7 @@ extension KeyboardShortcuts.Name {
 @main
 struct WinResApp: App {
     private static let NUMBER_OF_APPLICATION_SWITCHERS = 30
-    private static let NUMBER_OF_KEYBOARD_SHORTCUT_MAPPERS = 15
+    private static let NUMBER_OF_KEYBOARD_SHORTCUT_MAPPERS = 30
     
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     private var applicationSwitcherModels: [ApplicationSwitcherModel] = []
