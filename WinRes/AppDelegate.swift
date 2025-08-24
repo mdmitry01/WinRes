@@ -9,7 +9,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         
         if let button = self.statusItem!.button {
-            button.image = NSImage(systemSymbolName: "macwindow.on.rectangle", accessibilityDescription: "macwindow.on.rectangle")
+            button.image = NSImage(systemSymbolName: "keyboard.badge.ellipsis", accessibilityDescription: "WinRes menu bar icon")
         } else {
             let message = "Cannot set image for the menu bar status item"
             Utils.showErrorAlert(message)
