@@ -17,7 +17,6 @@ struct ApplicationSwitcherView: View {
             }
 
             Toggle("Open a new window", isOn: $model.opensNewWindow)
-            Toggle("Switch to a Space with open windows of the application", isOn: $model.switchesToWorkspace)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

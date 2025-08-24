@@ -60,7 +60,6 @@ class ApplicationService {
     static func switchToApplication(
         applicationBundleId: String,
         opensNewWindow: Bool,
-        switchesToWorkspace: Bool
     ) async throws {
         let runningApplications = NSRunningApplication.runningApplications(withBundleIdentifier: applicationBundleId)
         if runningApplications.isEmpty {
@@ -79,17 +78,8 @@ class ApplicationService {
             let frontmostApplication = NSWorkspace.shared.frontmostApplication,
             frontmostApplication.bundleIdentifier == applicationBundleId
         {
-            let hasWindows = try WindowService.hasWindowsInCurrentWorkspace(processId: processId)
-            if hasWindows {
-                _ = WindowService.switchToNextWindowInCurrentWorkspace(processId: processId)
-                return
-            }
-        }
-
-        if !switchesToWorkspace {
-            let hasWindows = try WindowService.hasWindowsInCurrentWorkspace(processId: processId)
-            if !hasWindows {
-                try self.openNewWindow(application: runningApplication)
+            let switched = WindowService.switchToNextWindowInCurrentWorkspace(processId: processId)
+            if switched {
                 return
             }
         }

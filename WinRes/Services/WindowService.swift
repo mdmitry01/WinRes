@@ -30,9 +30,4 @@ class WindowService {
             return false
         }
     }
-
-    static func hasWindowsInCurrentWorkspace(processId: pid_t) throws -> Bool {
-        let windows = try self.getWindowsInCurrentWorkspace(processId: processId)
-        return !windows.isEmpty
-    }
 }

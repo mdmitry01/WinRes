@@ -44,7 +44,6 @@ struct WinResApp: App {
                         try await ApplicationService.switchToApplication(
                             applicationBundleId: model.appBundleId,
                             opensNewWindow: model.opensNewWindow,
-                            switchesToWorkspace: model.switchesToWorkspace
                         )
                     } catch ApplicationServiceError.appNotFound(let appBundleId) {
                         let message = "Cannot find app with bundle ID \(appBundleId)"
