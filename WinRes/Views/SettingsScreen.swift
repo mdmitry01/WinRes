@@ -67,51 +67,6 @@ struct SettingsScreen: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Window shortcuts")
-                                .font(.system(.title3))
-                                .fontWeight(.bold)
-                                .padding(.top, 10)
-                            Text("Manage active window layout and visibility with global shortcuts.")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
-                        
-                        GroupBox {
-                            Form {
-                                KeyboardShortcuts.Recorder(for: .zoomActiveWindow) {
-                                    Text("Zoom active window")
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                }
-                                
-                                KeyboardShortcuts.Recorder(for: .minimizeActiveWindow) {
-                                    Text("Minimize active window")
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                }
-                                
-                                KeyboardShortcuts.Recorder(for: .moveActiveWindowToLeftSide) {
-                                    Text("Move active window to the left side of the screen")
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                }
-                                
-                                KeyboardShortcuts.Recorder(for: .moveActiveWindowToRightSide) {
-                                    Text("Move active window to the right side of the screen")
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                }
-                            }
-                        }
-                        
-                        Spacer(minLength: 0)
-                    }
-                    .padding(.horizontal)
-                    .padding(.bottom)
-                }
-                .tabItem {
-                    Label("Window shortcuts", systemImage: "rectangle.split.3x1")
-                }
-                
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 16) {
-                        VStack(alignment: .leading, spacing: 4) {
                             Text("Settings")
                                 .font(.system(.title3))
                                 .fontWeight(.bold)

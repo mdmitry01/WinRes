@@ -33,42 +33,7 @@ struct WinResApp: App {
         self.mapKeyboardShortcutsModels = self.createMapKeyboardShortcutsModels()
         self.addApplicationSwitcherShortcuts()
         self.addShortcutMapperShortcuts();
-        self.addWindowShortcuts()
         ModifierKeysService.ignoreModifierKeysIfEnabled(model: self.ignoreModifierKeysModel)
-    }
-    
-    private func addWindowShortcuts() {
-        KeyboardShortcuts.onKeyDown(for: .zoomActiveWindow) {
-            do {
-                try WindowService.zoom(processId: ApplicationService.getProcessIdOfFrontmostApp())
-            } catch {
-                print(error)
-            }
-        }
-        
-        KeyboardShortcuts.onKeyDown(for: .minimizeActiveWindow) {
-            do {
-                try WindowService.minimize(processId: ApplicationService.getProcessIdOfFrontmostApp())
-            } catch {
-                print(error)
-            }
-        }
-        
-        KeyboardShortcuts.onKeyDown(for: .moveActiveWindowToLeftSide) {
-            do {
-                try WindowService.zoomLeft(processId: ApplicationService.getProcessIdOfFrontmostApp())
-            } catch {
-                print(error)
-            }
-        }
-        
-        KeyboardShortcuts.onKeyDown(for: .moveActiveWindowToRightSide) {
-            do {
-                try WindowService.zoomRight(processId: ApplicationService.getProcessIdOfFrontmostApp())
-            } catch {
-                print(error)
-            }
-        }
     }
     
     private func addApplicationSwitcherShortcuts() -> Void {
