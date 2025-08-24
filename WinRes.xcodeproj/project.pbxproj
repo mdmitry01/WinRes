@@ -11,6 +11,9 @@
 		272A06632E5623D500AC3632 /* MapKeyboardShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A06622E5623D500AC3632 /* MapKeyboardShortcutsView.swift */; };
 		272A06652E5625F400AC3632 /* MapKeyboardShortcutsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A06642E5625F400AC3632 /* MapKeyboardShortcutsModel.swift */; };
 		2740A4012E5B0EA5005C90BE /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2740A4002E5B0EA5005C90BE /* Settings.png */; };
+		2740A40A2E5B3806005C90BE /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740A4092E5B3804005C90BE /* EventMonitor.swift */; };
+		2740A40D2E5B4082005C90BE /* AccessibilityPermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740A40C2E5B407C005C90BE /* AccessibilityPermissionsService.swift */; };
+		2740A4102E5B41C3005C90BE /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740A40F2E5B41C2005C90BE /* Bundle+Extensions.swift */; };
 		27AAAADC2E5727C000C2F339 /* ModifierKeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AAAADB2E5727C000C2F339 /* ModifierKeysService.swift */; };
 		27CE95182E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95172E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift */; };
 		27CE951A2E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95192E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift */; };
@@ -34,6 +37,9 @@
 		272A06622E5623D500AC3632 /* MapKeyboardShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyboardShortcutsView.swift; sourceTree = "<group>"; };
 		272A06642E5625F400AC3632 /* MapKeyboardShortcutsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyboardShortcutsModel.swift; sourceTree = "<group>"; };
 		2740A4002E5B0EA5005C90BE /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		2740A4092E5B3804005C90BE /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		2740A40C2E5B407C005C90BE /* AccessibilityPermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPermissionsService.swift; sourceTree = "<group>"; };
+		2740A40F2E5B41C2005C90BE /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		27AAAADB2E5727C000C2F339 /* ModifierKeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierKeysService.swift; sourceTree = "<group>"; };
 		27CE95172E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreModifierKeysView.swift; sourceTree = "<group>"; };
 		27CE95192E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreModifierKeysModel.swift; sourceTree = "<group>"; };
@@ -66,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2740A40E2E5B41B4005C90BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2740A40F2E5B41C2005C90BE /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		66025ECE2AC9AB3700A121FE /* Docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +108,7 @@
 		660F89752AC96FF5000067B9 /* WinRes */ = {
 			isa = PBXGroup;
 			children = (
+				2740A40E2E5B41B4005C90BE /* Extensions */,
 				66025ECE2AC9AB3700A121FE /* Docs */,
 				660F898A2AC9729A000067B9 /* Views */,
 				660F89892AC97286000067B9 /* Utils */,
@@ -119,6 +134,7 @@
 		660F89852AC971F6000067B9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2740A40C2E5B407C005C90BE /* AccessibilityPermissionsService.swift */,
 				660F898D2AC972DA000067B9 /* AccessibilityService.swift */,
 				27AAAADB2E5727C000C2F339 /* ModifierKeysService.swift */,
 				272A06602E5622E400AC3632 /* KeyboardShortcutsMappingService.swift */,
@@ -142,6 +158,7 @@
 		660F89892AC97286000067B9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2740A4092E5B3804005C90BE /* EventMonitor.swift */,
 				660F89952AC97325000067B9 /* Utils.swift */,
 			);
 			path = Utils;
@@ -250,10 +267,13 @@
 				27CE951A2E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift in Sources */,
 				660F89772AC96FF5000067B9 /* WinResApp.swift in Sources */,
 				660F898E2AC972DA000067B9 /* AccessibilityService.swift in Sources */,
+				2740A40D2E5B4082005C90BE /* AccessibilityPermissionsService.swift in Sources */,
 				272A06612E5622E400AC3632 /* KeyboardShortcutsMappingService.swift in Sources */,
 				272A06632E5623D500AC3632 /* MapKeyboardShortcutsView.swift in Sources */,
 				665169DA2B2662EC00BA89F2 /* DockService.swift in Sources */,
+				2740A4102E5B41C3005C90BE /* Bundle+Extensions.swift in Sources */,
 				660F899A2AC97346000067B9 /* SettingsScreen.swift in Sources */,
+				2740A40A2E5B3806005C90BE /* EventMonitor.swift in Sources */,
 				27CE95182E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift in Sources */,
 				660F89902AC972F0000067B9 /* ApplicationService.swift in Sources */,
 				272A06652E5625F400AC3632 /* MapKeyboardShortcutsModel.swift in Sources */,
@@ -404,7 +424,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.merkulov.WinRes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.merkulov.WinRes;
 				PRODUCT_NAME = "$(TARGET_NAME)";

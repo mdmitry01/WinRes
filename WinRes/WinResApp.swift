@@ -32,8 +32,8 @@ struct WinResApp: App {
         self.applicationSwitcherModels = self.createApplicationSwitcherModels()
         self.mapKeyboardShortcutsModels = self.createMapKeyboardShortcutsModels()
         self.addApplicationSwitcherShortcuts()
-        self.addShortcutMapperShortcuts();
-        ModifierKeysService.ignoreModifierKeysIfEnabled(model: self.ignoreModifierKeysModel)
+        self.addShortcutMapperShortcuts()
+        ModifierKeysService.startIgnoringModifierKeysIfEnabled(model: self.ignoreModifierKeysModel)
     }
     
     private func addApplicationSwitcherShortcuts() -> Void {

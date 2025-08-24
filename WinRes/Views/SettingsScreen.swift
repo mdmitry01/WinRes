@@ -5,7 +5,7 @@ struct SettingsScreen: View {
     let applicationSwitcherModels: [ApplicationSwitcherModel]
     let mapKeyboardShortcutsModels: [MapKeyboardShortcutsModel]
     let ignoreModifierKeysModel: IgnoreModifierKeysModel
-    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown"
+    let appVersion = Bundle.main.appVersion ?? "unknown"
     
     var body: some View {
         VStack(spacing: 0) {

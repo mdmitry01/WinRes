@@ -14,29 +14,43 @@ enum KeyboardModifierKey: UInt16, CaseIterable {
 }
 
 class ModifierKeysService {
-    public static func ignoreModifierKeysIfEnabled(model: IgnoreModifierKeysModel) -> Void {
-        // inspired by https://github.com/huytd/OctoCmd/blob/0339242971c892986c466d987c85e9537050a250/OctoCmd/Apps/AppDelegate.swift#L56-L72
-        NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged, handler: { event in
-            if model.ignoredModifierKeys.isEmpty {
+    // a static property to hold the EventMonitor reference and keep it alive
+    private static var flagsEventMonitor: EventMonitor?
+    
+    public static func startIgnoringModifierKeysIfEnabled(model: IgnoreModifierKeysModel) {
+        AccessibilityPermissionsService.onAccessibilityPermissionGranted() {
+            guard self.flagsEventMonitor == nil else {
                 return
             }
-            if event.modifierFlags.intersection([.shift, .control, .option, .command]).isEmpty {
-                // key up
-                DispatchQueue.main.async {
-                    KeyboardShortcuts.isEnabled = true
+            // based on https://github.com/MrKai77/Loop/blob/7e9d0db152ffd910af42b7b39b5619c66973eb61/Loop/Managers/KeybindMonitor.swift#L74-L86
+            self.flagsEventMonitor = CGEventMonitor(eventMask: .flagsChanged) { cgEvent in
+                guard
+                    !model.ignoredModifierKeys.isEmpty,
+                    cgEvent.type == .flagsChanged,
+                    let event = NSEvent(cgEvent: cgEvent)
+                else {
+                    return Unmanaged.passUnretained(cgEvent)
                 }
-                return;
-            }
-            // key down
-            guard let modifierKey = KeyboardModifierKey(rawValue: event.keyCode) else {
-                return
-            }
-            let isIgnored = model.ignoredModifierKeys[modifierKey] ?? false
-            if isIgnored {
-                DispatchQueue.main.async {
-                    KeyboardShortcuts.isEnabled = false
+                if event.modifierFlags.intersection([.shift, .control, .option, .command]).isEmpty {
+                    // key up
+                    DispatchQueue.main.async {
+                        KeyboardShortcuts.isEnabled = true
+                    }
+                    return Unmanaged.passUnretained(cgEvent)
                 }
+                // key down
+                guard let modifierKey = KeyboardModifierKey(rawValue: event.keyCode) else {
+                    return Unmanaged.passUnretained(cgEvent)
+                }
+                let isIgnored = model.ignoredModifierKeys[modifierKey] ?? false
+                if isIgnored {
+                    DispatchQueue.main.async {
+                        KeyboardShortcuts.isEnabled = false
+                    }
+                }
+                return Unmanaged.passUnretained(cgEvent)
             }
-        })
+            self.flagsEventMonitor!.start()
+        }
     }
 }

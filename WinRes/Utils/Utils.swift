@@ -5,11 +5,11 @@ enum KeyPressError: Error {
 }
 
 class Utils {
-    static func showErrorAlert(_ text: String) {
+    static func showErrorAlert(_ text: String, title: String = "Error") {
         // https://www.hackingwithswift.com/read/9/4/back-to-the-main-thread-dispatchqueuemain
         DispatchQueue.main.async {
             let alert = NSAlert()
-            alert.messageText = "Error"
+            alert.messageText = title
             alert.informativeText = text
             alert.alertStyle = NSAlert.Style.warning
             alert.addButton(withTitle: "OK")
