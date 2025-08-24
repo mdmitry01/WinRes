@@ -19,8 +19,8 @@ A macOS utility that provides global keyboard shortcuts for application switchin
 3. In WinRes, open the **App shortcuts** tab and set a `Control + Q` shortcut for Google Chrome. After this, pressing `Caps Lock + Q` should switch to Google Chrome; pressing **Left Control + Q** should do nothing (WinRes will ignore the left control).  
 4. In the **App shortcuts** tab, set `Control + Command + Q` to open a new Google Chrome window.  
 5. Repeat the same setup for the Terminal app (`Control + E` and `Control + Command + E`).  
-6. Set up window-tiling shortcuts. WinRes does not implement window tiling by itself, but it allows you to map shortcuts that can trigger this functionality. Starting with macOS 15 (Sequoia), window-tiling hotkeys are provided by macOS itself. Go to **System Settings → Keyboard → Keyboard Shortcuts → Windows → Halves** and assign `⌃⌥⇧⌘A` shortcut to **Tile Left Half**, or choose any shortcut you prefer.  
-7. In WinRes → **Map shortcuts**, map `Control + A` to the `A` key with all four modifiers enabled. Now, pressing `Caps Lock + A` should tile the focused window to the left.  
+6. Set up window-tiling shortcuts. WinRes does not implement window tiling by itself, but it allows you to map shortcuts that can trigger this functionality. Starting with macOS 15 (Sequoia), window-tiling hotkeys are provided by macOS itself. Go to **System Settings → Keyboard → Keyboard Shortcuts → Windows → Halves** and assign `⌃⌥⇧⌘[` shortcut to **Tile Left Half**, or choose any shortcut you prefer.  
+7. In WinRes → **Map shortcuts**, map `Control + A` to the `[` key with all four modifiers enabled. Now, pressing `Caps Lock + A` should tile the focused window to the left.  
 8. Repeat the same steps for the shortcut that tiles a window to the right and for the shortcut that maximizes a window.
 
 ## App switching logic

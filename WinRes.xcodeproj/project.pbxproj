@@ -10,10 +10,10 @@
 		272A06612E5622E400AC3632 /* KeyboardShortcutsMappingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A06602E5622E400AC3632 /* KeyboardShortcutsMappingService.swift */; };
 		272A06632E5623D500AC3632 /* MapKeyboardShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A06622E5623D500AC3632 /* MapKeyboardShortcutsView.swift */; };
 		272A06652E5625F400AC3632 /* MapKeyboardShortcutsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A06642E5625F400AC3632 /* MapKeyboardShortcutsModel.swift */; };
-		2740A4012E5B0EA5005C90BE /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2740A4002E5B0EA5005C90BE /* Settings.png */; };
 		2740A40A2E5B3806005C90BE /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740A4092E5B3804005C90BE /* EventMonitor.swift */; };
 		2740A40D2E5B4082005C90BE /* AccessibilityPermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740A40C2E5B407C005C90BE /* AccessibilityPermissionsService.swift */; };
 		2740A4102E5B41C3005C90BE /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740A40F2E5B41C2005C90BE /* Bundle+Extensions.swift */; };
+		2740A4122E5BA899005C90BE /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2740A4112E5BA899005C90BE /* Settings.png */; };
 		27AAAADC2E5727C000C2F339 /* ModifierKeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AAAADB2E5727C000C2F339 /* ModifierKeysService.swift */; };
 		27CE95182E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95172E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift */; };
 		27CE951A2E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE95192E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift */; };
@@ -36,10 +36,10 @@
 		272A06602E5622E400AC3632 /* KeyboardShortcutsMappingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsMappingService.swift; sourceTree = "<group>"; };
 		272A06622E5623D500AC3632 /* MapKeyboardShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyboardShortcutsView.swift; sourceTree = "<group>"; };
 		272A06642E5625F400AC3632 /* MapKeyboardShortcutsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKeyboardShortcutsModel.swift; sourceTree = "<group>"; };
-		2740A4002E5B0EA5005C90BE /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		2740A4092E5B3804005C90BE /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		2740A40C2E5B407C005C90BE /* AccessibilityPermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPermissionsService.swift; sourceTree = "<group>"; };
 		2740A40F2E5B41C2005C90BE /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		2740A4112E5BA899005C90BE /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		27AAAADB2E5727C000C2F339 /* ModifierKeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierKeysService.swift; sourceTree = "<group>"; };
 		27CE95172E55EB7A007ED3D1 /* IgnoreModifierKeysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreModifierKeysView.swift; sourceTree = "<group>"; };
 		27CE95192E55EBBB007ED3D1 /* IgnoreModifierKeysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreModifierKeysModel.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		667A82DA2B418F6100D64145 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				2740A4002E5B0EA5005C90BE /* Settings.png */,
+				2740A4112E5BA899005C90BE /* Settings.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 			files = (
 				660F897E2AC96FF6000067B9 /* Preview Assets.xcassets in Resources */,
 				660F897B2AC96FF6000067B9 /* Assets.xcassets in Resources */,
-				2740A4012E5B0EA5005C90BE /* Settings.png in Resources */,
+				2740A4122E5BA899005C90BE /* Settings.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
